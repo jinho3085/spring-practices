@@ -14,7 +14,7 @@
 		<project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
-		<org.sprframework-version>6.2.1</org.sprframework-version>
+		<org.springframework-version>6.2.1</org.springframework-version>
 	</properties>
 	
 	<dependencies>
@@ -23,7 +23,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>${org.sprframework-version}</version>
+			<version>${org.springframework-version}</version>
 		</dependency>
 	
 		<!-- servlet api -->
