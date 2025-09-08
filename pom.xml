@@ -24,5 +24,6 @@
 		<module>hellospring</module>
 		<module>emaillist03</module>
 		<module>logex</module>
+		<module>aop</module>
 	</modules>
 </project>
