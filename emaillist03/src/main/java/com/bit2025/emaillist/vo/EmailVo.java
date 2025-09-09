@@ -5,6 +5,8 @@ public class EmailVo {
 	private String firstName;
 	private String lastName;
 	private String email;
+	private String regDate;
+	
 	public Long getId() {
 		return id;
 	}
@@ -28,11 +30,17 @@ public class EmailVo {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}	
+	public String getRegDate() {
+		return regDate;
 	}
+	public void setRegDate(String regDate) {
+		this.regDate = regDate;
+	}
+	
 	@Override
 	public String toString() {
-		return "EmailVo [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+		return "EmailVo [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", regDate=" + regDate + "]";
 	}
-	
-	
 }
