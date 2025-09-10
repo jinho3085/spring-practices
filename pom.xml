@@ -25,5 +25,6 @@
 		<module>emaillist03</module>
 		<module>logex</module>
 		<module>aop</module>
+		<module>fileupload</module>
 	</modules>
 </project>
