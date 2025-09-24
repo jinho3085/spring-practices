@@ -1,0 +1,23 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>thymeleaf</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<h4>Conditional01: th:if ~ th:unless</h4>
+	
+	<table>
+		<tr th:each="user: ${users}">
+			<td>[[${user.no}]]</td>
+			<td>[[${user.name}]]</td>
+			<td th:if="${user.gender == 'male'}" th:text="${'(남)'}"></td>
+			<td th:unless="${user.gender == 'male'}">(여)</td>
+		</tr>
+	</table>
+	
+	<div style="padding-top: 100px">
+		<a th:href="@{/ex01}">return to index</a>
+	</div>	
+</body>
+</html>

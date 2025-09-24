@@ -1,0 +1,27 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>thymeleaf</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<h1 th:text="${'Hello World: Thymeleaf View'}"></h1>
+	
+	<h4>index of example</h4>
+	<ul>
+		<li><a th:href="@{/ex01/02}">1-2. JSP와 함께 사용하기</a></li>
+		<li><a th:href="@{/ex01/03}">1-3. Basics: 출력 및 연산</a></li>
+		<li><a th:href="@{/ex02/01}">2. 다양한 Scope의 객체 접근하기</a></li>
+		<li><a th:href="${'https://www.thymeleaf.org/doc/tutorials/3.1/usingthymeleaf.html#strings'}" target="_blank">3-1. 다양한 expression utility object</a></li>
+		<li><a th:href="@{/ex04/01}">4-1. Iteration01: th:each</a></li>	
+		<li><a th:href="@{/ex04/02(r=3, c=3)}">4-2. Iteration02: th:each and #numbers.sequence</a></li>	
+		<li><a th:href="@{/ex05/01}">5-1. Conditional01: th:if ~ th:unless</a></li>
+		<li><a th:href="@{/ex05/02(c=r)}">5-2. Conditional02: th:switch - th:case</a></li>
+		<li><a th:href="@{/ex06/01}">6. Server-Side Includes: th:include</a></li>
+		<li><a th:href="@{/ex07/join}">7. Form &amp; Message Source(i18n)</a></li>
+		<li><a th:href="${'https://www.thymeleaf.org/doc/articles/springsecurity.html'}" target="_blank">8-1. Spring Securty Tags 01</a></li>
+		<li><a href="https://www.baeldung.com/spring-security-thymeleaf" target="_blank">8-2. Spring Securty Tags 02</a></li>
+	</ul>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>thymeleaf</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link th:href="@{/assets/css/user.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="container">
+		<div id="content">
+			<div id="user">
+				<form id="join-form" name="joinForm" th:object="${userVo}" method="post" th:action="@{/ex07/join}">
+					<label class="block-label" for="name" th:text="#{user.join.label.name}"></label>
+					<input type="text" id="name" th:field="${userVo.name}">
+					<p style="padding:3px 0 5px 0; text-align: left; color: #f00" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+
+					<label class="block-label" for="email">[[#{user.join.label.email}]]</label>
+					<input type="text" id="email" th:field="*{email}">
+					<input type="button" th:value="#{user.join.label.email.check}">
+					<p style="padding:3px 0 5px 0; text-align: left; color: #f00" th:if="${#fields.hasErrors('email')}" th:text="${#fields.errors('email')[0]}"></p>
+					
+					<label class="block-label" th:text="#{user.join.label.password}"></label>
+					<input type="password" name="password" th:value="*{password}">
+					<p style="padding:3px 0 5px 0; text-align: left; color: #f00" th:if="${#fields.hasErrors('password')}" th:text="${#fields.errors('password')[0]}"></p>
+					
+					<fieldset>
+						<legend th:text="#{user.join.label.gender}"></legend>
+						<label th:text="#{user.join.label.gender.male}"></label> <input type="radio" name="gender" value="female" th:checked="*{gender == 'female'}">
+						<label  th:text="#{user.join.label.gender.female}"></label> <input type="radio" name="gender" value="male" th:checked="*{gender == 'male'}">
+					</fieldset>
+					
+					<input type="submit" th:value="#{user.join.button.signup}">					
+				</form>
+			</div>
+			<th:block th:include="includes/footer"></th:block>
+		</div>
+	</div>
+</body>
+</html>

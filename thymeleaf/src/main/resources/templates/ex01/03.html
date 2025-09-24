@@ -1,0 +1,85 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>thymeleaf</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<h4>01.값출력 - th:text 속성, th:utext 속성, th:block 태그, [ [ EL ] ]</h4>
+	<span th:text="${iVal}"></span>										<br>
+	<span th:text="${lVal}"></span>										<br>
+	<th:block th:text="${fVal}" />	: 적당한 Tag가 없는 경우					<br>
+	[[${bVal}]]						: Thymeleaf 3.x 지원, Tag없이 사용가능	<br>
+	<th:block th:text="${sVal}" />	: 기본적으로 HTML Escaped				<br>
+	[[${sVal}]]						: 기본적으로 HTML Escaped				<br>
+	[(${sVal})]						: HTML Unescaped					<br>	
+
+
+	
+	
+	<h4>02.객체출력(Concatenate)</h4>
+	<ul>
+		<li th:text='${"no:" + userVo.no + ", name:" + userVo.name}'></li>
+		<li th:text="'no:' + ${userVo.no} + ', name:' + ${userVo.name}"></li>
+		<li th:text="|no:${userVo.no}, name:${userVo.name}|"></li>
+		<li>no:[[${userVo.no}]], name:[[${userVo.name}]]</li>
+	</ul>
+
+
+
+		
+	<h4>03.객체출력(null처리)</h4>
+	<ul>
+		<li th:text="${obj}"></li>
+		<li th:text="${'값:' + obj}"></li>
+		<li th:text="|값:${obj == null ? '' : obj}|"></li>
+		<li th:if="${obj != null}" th:text="|값:${obj}|"></li>
+		<li>값:[[${obj}]]</li>
+	</ul>
+
+
+
+	<h4>04.Map 출력</h4>
+	[[${m.iVal }]]										<br>
+	[[${m.fVal }]]										<br>
+	[[${m.sVal }]]										<br>
+
+
+	
+	<h4>05.산술연산</h4>
+	<th:block th:text="${3*4+6/2 }"/>					<br>
+	<th:block th:text="${iVal + 10 }"/>					<br>
+
+
+	
+	<h4>06.관계연산</h4>
+	<th:block th:text="${iVal == 10 }"/>				<br>
+	<th:block th:text="${iVal < 5 }"/>					<br>
+	<th:block th:text="${obj == null }"/>				<br>
+	<th:block th:text="${obj != null }"/>				<br>
+
+
+
+	<h4>07.논리연산</h4>
+	<th:block th:text="${iVal == 10 && lVal < 1000 }"/>	<br>
+	<th:block th:text="${iVal == 10 || lVal < 1000 }"/>	<br>
+	
+	
+	
+	<h4>08.요청 파라미터</h4>
+	--[[${param.name}]]--								<br>
+	
+	
+	
+	<h4>09.Context Path</h4>
+	[[@{'/'}]]
+	
+	
+	
+	
+	
+	<div style="padding-top: 100px">
+		<a th:href="@{/ex01}">return to index</a>
+	</div>
+</body>
+</html>

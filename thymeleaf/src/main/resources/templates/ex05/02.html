@@ -1,0 +1,21 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>thymeleaf</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<h4>Conditional02: th:switch - th:case</h4>
+	
+	<th:block th:switch="${param.c[0]}">
+		<h6 th:case="r" style="color: #f00">안녕 빨강</h6>
+		<h6 th:case="g" style="color: #0f0">안녕 녹색</h6>
+		<h6 th:case="b" style="color: #00f">안녕 파랑</h6>
+		<h6 th:case="*">안녕 검정</h6>
+	</th:block>
+	
+	<div style="padding-top: 100px">
+		<a th:href="@{/ex01}">return to index</a>
+	</div>	
+</body>
+</html>

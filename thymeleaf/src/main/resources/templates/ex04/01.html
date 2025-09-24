@@ -1,0 +1,29 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>thymeleaf</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<h4>Loop01: th:each: basics</h4>
+	<ul th:each="vo: ${list}">
+		<li>[[${vo.no}]]:[[${vo.name}]]</li>
+	</ul>
+
+
+	<h4>Loop02: th:each: status</h4>
+	<table th:each="vo, status: ${list}">
+		<tr
+			th:style="${status.first} ? 'color: red' : (${status.last} ? 'color: blue' : '')"
+			th:alt-title="${status.even} ? 'even' : 'odd'">
+			<td th:text="|[${status.size - status.index}]|"></td>
+			<td th:text="|[${status.index}:${status.count}]|"></td>
+			<td>[[${vo.no}]]:[[${vo.name}]]</td>
+		</tr>
+	</table>
+
+	<div style="padding-top: 100px">
+		<a th:href="@{/ex01}">return to index</a>
+	</div>
+</body>
+</html>

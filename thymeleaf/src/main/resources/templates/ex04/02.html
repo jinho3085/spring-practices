@@ -1,0 +1,29 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>thymeleaf</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<h4>Loop03: th:each: #numbers.sequence</h4>
+	
+	<table border="1" cellspacing="0" cellpadding="10">
+		<tr th:each="i: ${#numbers.sequence(1, row+1)}">
+			<td th:each="j: ${#numbers.sequence(1, col+1)}" th:text="|cell(${i}, ${j})|"></td>
+		</tr>
+	</table>
+	
+	<hr>
+	
+	<table border="1" cellspacing="0" cellpadding="10">
+		<tr th:each="i: ${#numbers.sequence(1, row+1)}">
+			<td th:each="j: ${#numbers.sequence(1, col+1)}">cell([[${i}]], [[${j}]])</td>
+		</tr>
+	</table>
+
+	
+	<div style="padding-top: 100px">
+		<a th:href="@{/ex01}">return to index</a>
+	</div>
+</body>
+</html>

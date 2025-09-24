@@ -1,0 +1,52 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>thymeleaf</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<h4>scope(객체존속범위)안의 객체 접근</h4>
+	[[${vo.no }]] <br>
+	[[${vo.name }]] <br>
+	
+	<hr>
+	
+	
+	== request scope(Spring Model Attributes) ================<br>
+	[[${vo.no }]] <br>
+	[[${vo.name }]] <br>
+	
+	<p>expression utility object #request 지원안함</p>
+	<hr>
+
+
+	== session scope ====================================<br>
+	[[${session.vo.no }]] <br>
+	[[${session.vo.name }]] <br>
+
+	<p>expression utility object #session 지원안함</p>
+	<hr>
+
+
+	== application scope(ServletContext) ===================<br>
+	[[${servletContext.getAttribute('vo').no }]] <br>
+	[[${servletContext.getAttribute('vo').name }]] <br>
+	
+	<p>expression utility object #servletContext 지원안함</p>
+	<hr>
+
+
+	== application scope(ApplicationContext, Spring Bean) =====<br>
+	[[${@vo.no }]] <br>
+	[[${@vo.name }]] <br>
+
+
+
+
+
+
+	<div style="padding-top: 100px">
+		<a th:href="@{/ex01}">return to index</a>
+	</div>
+</body>
+</html>

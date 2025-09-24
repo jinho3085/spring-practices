@@ -27,6 +27,7 @@
 		<module>aop</module>
 		<module>fileupload</module>
 		<module>locale</module>
+		<module>thymeleaf</module>
 		<module>bean-wiring</module>
 	</modules>
 </project>
