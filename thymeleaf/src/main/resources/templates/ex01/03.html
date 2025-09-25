@@ -6,9 +6,11 @@
 </head>
 <body>
 	<h4>01.값출력 - th:text 속성, th:utext 속성, th:block 태그, [ [ EL ] ]</h4>
+	
 	<span th:text="${iVal}"></span>										<br>
-	<span th:text="${lVal}"></span>										<br>
-	<th:block th:text="${fVal}" />	: 적당한 Tag가 없는 경우					<br>
+	<span th:text="${lVal}"></span>	
+										<br>
+	<th:block th:text="${fVal}" />	: 적당한 HTML Tag가 없는 경우			<br>
 	[[${bVal}]]						: Thymeleaf 3.x 지원, Tag없이 사용가능	<br>
 	<th:block th:text="${sVal}" />	: 기본적으로 HTML Escaped				<br>
 	[[${sVal}]]						: 기본적으로 HTML Escaped				<br>
@@ -72,11 +74,7 @@
 	
 	
 	<h4>09.Context Path</h4>
-	[[@{'/'}]]
-	
-	
-	
-	
+	[[@{'/a/b/c'}]]
 	
 	<div style="padding-top: 100px">
 		<a th:href="@{/ex01}">return to index</a>

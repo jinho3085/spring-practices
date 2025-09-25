@@ -11,7 +11,7 @@
 		<tr th:each="user: ${users}">
 			<td>[[${user.no}]]</td>
 			<td>[[${user.name}]]</td>
-			<td th:if="${user.gender == 'male'}" th:text="${'(남)'}"></td>
+			<td th:if="${user.gender == 'male'}">(남)</td>
 			<td th:unless="${user.gender == 'male'}">(여)</td>
 		</tr>
 	</table>
